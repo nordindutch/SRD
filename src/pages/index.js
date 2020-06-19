@@ -4,9 +4,11 @@ import Layout from "../components/layout"
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
 import Content from "../components/content";
+import SEO from "../components/seo"
 
 export default function Home({data}) {
     return (<Layout>
+        <SEO  />
             <Header/>
             <div className="content-container">
                 <Sidebar>

@@ -15,12 +15,16 @@
     },
     "dependencies": {
         "gatsby": "^2.23.3",
+        "gatsby-plugin-manifest": "^2.4.12",
+        "gatsby-plugin-offline": "^3.2.11",
+        "gatsby-plugin-react-helmet": "^3.3.4",
         "gatsby-plugin-sass": "^2.3.4",
         "gatsby-source-filesystem": "^2.3.12",
         "gatsby-source-wordpress": "^3.3.13",
         "node-sass": "^4.14.1",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
+        "react-helmet": "^6.1.0",
         "touch-cli": "0.0.1"
     },
     "devDependencies": {
