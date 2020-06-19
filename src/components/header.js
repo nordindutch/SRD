@@ -1,10 +1,10 @@
 import React from "react"
 
 
-export default function Header(props) {
+export default function Header() {
 
   return (<div className="header-block">
-      <h1 >{props.setTitle}</h1>
+      <h1 >Fantastic Frontier SRD</h1>
   </div>
   
   )

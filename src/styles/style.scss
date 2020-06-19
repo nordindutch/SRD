@@ -44,28 +44,41 @@ body {
         border-right: $baseBorder;
         padding-right: $basePadding;
         height: fit-content;
+        margin: 1rem 0;
         ul{
           padding: 0;
-          li{
-            list-style: none;
+          margin: 0;
+          
             a{
-              color: skyblue;
               text-decoration: none;
+              user-select: none;
+              li{
+                list-style: none;
+                color: skyblue;
+                width: fit-content;
+                margin-top: 0.5rem;
               border-bottom: 1px solid skyblue;
               &:hover{
                 opacity: 0.5;
+                cursor: pointer;
               }
             }
           }
         }
       }
       .content-block{
+        padding: 1rem 0;
         width: 75%;
         height: fit-content;
         padding-left: $basePadding;
         column-count: 2;
         column-rule: $baseBorder;
         column-gap: $basePadding;
+        p{
+          &:first-of-type{
+            margin-top: 0;
+          }
+        }
       }
     }
   }

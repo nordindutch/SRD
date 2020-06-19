@@ -1,13 +1,14 @@
 import React from "react"
+import { Link } from "gatsby"
 
-
-export default function Sidebar() {
+export default function Sidebar({children}) {
 
   return (<div className="sidebar-block">
       <ul>
-          <li>
-              <a href="https://www.nu.nl">Test Listicle</a>
-          </li>
+      
+                <Link to="../"><li>Home</li></Link>
+            
+          {children}
       </ul>
   </div>
   

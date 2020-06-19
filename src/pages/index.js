@@ -1,26 +1,49 @@
 import React from "react";
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import { graphql } from "gatsby"
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
 import Content from "../components/content";
 
 export default function Home({data}) {
     return (<Layout>
-            <Header setTitle={data.site.siteMetadata.title}/>
+            <Header/>
             <div className="content-container">
-                <Sidebar/>
-                <Content/>
+                <Sidebar>
+                {data.allWordpressPost.edges.map(({ node }) => (
+                    <Link to={node.slug}><li>
+                    {node.title}
+                    </li>
+                    </Link>
+                ))}
+                    </Sidebar>
+                <Content>
+      {data.allWordpressPage.edges.map(({ node }) => (
+          <div dangerouslySetInnerHTML={{ __html: node.content }} />
+      ))}
+      </ Content>
             </div>
+            
          </Layout>
          
          )
 }
-export const query = graphql`
+export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
+    allWordpressPage {
+        edges {
+          node {
+            content
+          }
+        }
+      }
+    allWordpressPost(sort: { fields: [date] }) {
+      edges {
+        node {
+          title
+          excerpt
+          slug
+        }
       }
     }
   }
